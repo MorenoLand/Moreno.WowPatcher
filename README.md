@@ -4,7 +4,9 @@ A Windows utility for applying targeted patches to compatible 32-bit World of Wa
 
 Choose `wow.exe` and a patch. The patcher checks the executable layout and every patch site before enabling changes, saves a full backup beside the executable, and verifies the resulting bytes.
 
-The first available patch fixes jumpy mouse camera movement. Patch definitions are kept separate from the shared patch engine so additional patches can be registered in the catalog.
+The first available patch fixes jumpy camera movement during right-button mouselook. It replaces repeated cursor recentering with a bounded virtual cursor, then calculates camera deltas relative to that position. This reduces sudden cursor snaps and camera jumps. The patch changes four verified sites in a compatible executable.
+
+Patch definitions are separate from the shared patch engine so additional patches can be registered in the catalog.
 
 ## Requirements
 
